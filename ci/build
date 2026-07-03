@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# shellcheck disable=SC1091
+. .config
+
+docker build --no-cache -t "${IMAGE_NAME:?}" .
+

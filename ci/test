@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# shellcheck disable=SC1091
+. .config
+
+./ci/build
+
+docker run --rm "${IMAGE_NAME:?}" bash --version
+docker run --rm "${IMAGE_NAME:?}" jq --version
+docker run --rm "${IMAGE_NAME:?}" shellcheck --version

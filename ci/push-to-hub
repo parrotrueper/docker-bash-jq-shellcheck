@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# shellcheck disable=SC1091
+. .config
+
+REMOTE_IMAGE="docker.io/${HUB_TAG:?}:${VERSION_TAG:?}"
+echo "docker image tag ${IMAGE_NAME:?} ${REMOTE_IMAGE}"
+echo "docker push ${REMOTE_IMAGE}"
